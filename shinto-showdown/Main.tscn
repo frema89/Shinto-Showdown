@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhgh72ardb0nd"]
+
+[ext_resource type="Script" uid="uid://dkckaek8d2v2v" path="res://Var.gd" id="1_glv2v"]
+
+[node name="Main Var Node" type="Node2D"]
+script = ExtResource("1_glv2v")
