@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://cfhicgtxnecga"]
 
 [ext_resource type="Texture2D" uid="uid://supjfxdec54i" path="res://Assets for Y10 game/sheet.png" id="1_mc20k"]
-[ext_resource type="PackedScene" uid="uid://c5bi2vs5pqhks" path="res://node_2d.tscn" id="2_cove1"]
+[ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_mc20k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
 texture = ExtResource("1_mc20k")
@@ -13,12 +13,19 @@ texture = ExtResource("1_mc20k")
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:0/0 = 0
 15:0/0 = 0
 16:0/0 = 0
@@ -29,12 +36,19 @@ texture = ExtResource("1_mc20k")
 4:1/0 = 0
 5:1/0 = 0
 7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:1/0 = 0
 15:1/0 = 0
 16:1/0 = 0
@@ -42,12 +56,19 @@ texture = ExtResource("1_mc20k")
 3:2/0 = 0
 4:2/0 = 0
 7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:2/0 = 0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:2/0 = 0
 15:2/0 = 0
 16:2/0 = 0
@@ -55,12 +76,18 @@ texture = ExtResource("1_mc20k")
 4:3/0 = 0
 5:3/0 = 0
 7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:3/0 = 0
 12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:3/0 = 0
 15:3/0 = 0
 16:3/0 = 0
@@ -107,14 +134,15 @@ texture = ExtResource("1_mc20k")
 5:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_dn5ey"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dwyiq")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAD6/wAAAAAIAAAAAAD7/wAAAAAIAAAAAAD8/wAAAAAIAAAAAAD9/wAAAAAIAAAAAAD+/wAAAAAIAAAAAAD//wAAAAAIAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAIAAAAAAACAAAAAAAIAAAAAAADAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAFAAAAAAAJAAEAAAD5/wAAAAAIAAEAAAD//wEAAAALAAEAAAD6/wEAAAALAAEAAAD7/wEAAAALAAEAAAD8/wEAAAALAAEAAAD9/wEAAAALAAEAAAD+/wEAAAALAAEAAAAAAAEAAAALAAEAAAABAAEAAAALAAEAAAACAAEAAAALAAEAAAADAAEAAAALAAEAAAAEAAEAAAALAAEAAAAFAAEAAAAMAAEAAAD5/wEAAAAKAAEAAAA=")
+tile_map_data = PackedByteArray("AAD6/wAAAAAIAAAAAAD7/wAAAAAIAAAAAAD8/wAAAAAIAAAAAAD9/wAAAAAIAAAAAAD+/wAAAAAIAAAAAAD//wAAAAAIAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAIAAAAAAACAAAAAAAIAAAAAAAFAAAAAAAJAAEAAAD5/wAAAAAIAAEAAAD//wEAAAALAAEAAAD6/wEAAAALAAEAAAD7/wEAAAALAAEAAAD8/wEAAAALAAEAAAD9/wEAAAALAAEAAAD+/wEAAAALAAEAAAAAAAEAAAALAAEAAAABAAEAAAALAAEAAAACAAEAAAALAAEAAAADAAEAAAALAAEAAAAEAAEAAAALAAEAAAD5/wEAAAAKAAEAAAAFAAEAAAAMAAEAAAAEAAAAAAAIAAAAAAADAAAAAAAIAAAAAAA=")
 tile_set = SubResource("TileSet_dn5ey")
 
-[node name="Player1" parent="." instance=ExtResource("2_cove1")]
-position = Vector2(-3, -15)
+[node name="Player1" parent="." instance=ExtResource("2_mc20k")]
+position = Vector2(-105, -13)
