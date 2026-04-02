@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bpnlde0nlhiqk"]
+[gd_scene load_steps=33 format=3 uid="uid://bpnlde0nlhiqk"]
 
 [ext_resource type="Texture2D" uid="uid://ddon76t6asj00" path="res://Assets for Y10 game/Samurai.png" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://dbcrr4drstdmq" path="res://Assets for Y10 game/Files/Sky.png" id="2_kpjcp"]
 
 [sub_resource type="GDScript" id="GDScript_wtcfe"]
 resource_name = "P1"
@@ -48,24 +49,25 @@ func _physics_process(delta: float) -> void:
 		player_sprite.flip_h = true
 		
 	if Input.is_action_pressed(\"dashP1\"):
-		if rolltime < 0.8:
-			velocity.x = direction * ROLL_BOOST
-			rolltime += delta
-		if rolltime > 0.8:
-			rolltime = 0.8
+		if not is_on_floor():
+			if rolltime < 0.8:
+				velocity.x = direction * ROLL_BOOST
+				rolltime += delta
+			if rolltime > 0.8:
+				rolltime = 0.8
 			
 	else: 
 		rolltime = 0
 		
 	if Input.is_action_pressed(\"dashP1\"):
-		player_sprite.animation = \"Dash\"
-		
-	elif Input.is_action_pressed(\"rightP1\") or Input.is_action_pressed(\"leftP1\"):
-		player_sprite.animation = \"Run\"
-		
+		if not is_on_floor():
+			player_sprite.animation = \"Dash\"
 	elif Input.is_action_pressed(\"jumpP1\"):
 		player_sprite.animation = \"Jump\"
 	
+	elif Input.is_action_pressed(\"rightP1\") or Input.is_action_pressed(\"leftP1\"):
+		player_sprite.animation = \"Run\"
+		
 	else:
 		player_sprite.animation = \"Idle\"
 	move_and_slide()
@@ -77,6 +79,34 @@ func _physics_process(delta: float) -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
 size = Vector2(8, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg6sq"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(192, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84ma"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(240, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47wu6"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(288, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1s8"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(336, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vjad"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(384, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgsek"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(96, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pi4m"]
+atlas = ExtResource("1_xhfnw")
+region = Rect2(144, 192, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("1_xhfnw")
@@ -93,10 +123,6 @@ region = Rect2(96, 0, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
 atlas = ExtResource("1_xhfnw")
 region = Rect2(144, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hp6x6"]
-atlas = ExtResource("1_xhfnw")
-region = Rect2(48, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tkgg"]
 atlas = ExtResource("1_xhfnw")
@@ -166,6 +192,32 @@ region = Rect2(336, 64, 48, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sg6sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h84ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47wu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgsek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pi4m")
+}],
+"loop": false,
+"name": &"Dash",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_epypp")
 }, {
 "duration": 1.0,
@@ -188,9 +240,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hp6x6")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3tkgg")
 }, {
@@ -215,7 +264,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wi0c6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 5.0
 }, {
@@ -261,12 +310,18 @@ shape = SubResource("RectangleShape2D_xhfnw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(7, -3)
+position = Vector2(7, -7)
+scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_hqns4")
-animation = &"Jump"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.620242
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(7, -3)
 zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+z_index = -1000
+position = Vector2(-4.99998, 2.00001)
+scale = Vector2(2.2585, 2.67778)
+texture = ExtResource("2_kpjcp")
