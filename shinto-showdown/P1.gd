@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var finish
 var SPEED = 200.0
 const ADDSPEED = 20.0
 const JUMP_VELOCITY = -400.0

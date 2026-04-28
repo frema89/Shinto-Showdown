@@ -1,81 +1,8 @@
 [gd_scene format=3 uid="uid://bpnlde0nlhiqk"]
 
+[ext_resource type="Script" uid="uid://6d8rl68ciy7u" path="res://P1.gd" id="1_kne1u"]
 [ext_resource type="Texture2D" uid="uid://ddon76t6asj00" path="res://Assets for Y10 game/Samurai.png" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://dbcrr4drstdmq" path="res://Assets for Y10 game/Files/Sky.png" id="2_kpjcp"]
-
-[sub_resource type="GDScript" id="GDScript_wtcfe"]
-resource_name = "P1"
-script/source = "extends CharacterBody2D
-
-
-var SPEED = 200.0
-const ADDSPEED = 20.0
-const JUMP_VELOCITY = -400.0
-const ROLL_BOOST = 300.0
-
-@onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-var rolltime = 1
-var jumps = 0
-var coin_count = 0
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	
-	if is_on_floor():
-		jumps = 0
-	# Handle jump.
-	if Input.is_action_just_pressed(\"jumpP1\") and jumps < 2:
-		jumps += 1
-		velocity.y = JUMP_VELOCITY
-
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-	var direction := Input.get_axis(\"leftP1\", \"rightP1\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if direction > 0:
-		player_sprite.flip_h = false
-		
-	elif direction < 0:
-		player_sprite.flip_h = true
-		
-	if Input.is_action_pressed(\"dashP1\"):
-		if not is_on_floor():
-			if rolltime < 0.8:
-				velocity.x = direction * ROLL_BOOST
-				rolltime += delta
-			if rolltime > 0.8:
-				rolltime = 0.8
-			
-	else: 
-		rolltime = 0
-		
-	if Input.is_action_pressed(\"dashP1\"):
-		if not is_on_floor():
-			player_sprite.animation = \"Dash\"
-	elif Input.is_action_pressed(\"jumpP1\"):
-		player_sprite.animation = \"Jump\"
-	
-	elif Input.is_action_pressed(\"rightP1\") or Input.is_action_pressed(\"leftP1\"):
-		player_sprite.animation = \"Run\"
-		
-	else:
-		player_sprite.animation = \"Idle\"
-	move_and_slide()
- 
-	if position.y > 300:
-		position = Vector2(0, 0)
-	
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
 size = Vector2(8, 23)
@@ -301,7 +228,7 @@ animations = [{
 [node name="Player1" type="Node2D" unique_id=1297317234]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=994868188]
-script = SubResource("GDScript_wtcfe")
+script = ExtResource("1_kne1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1031121288]
 visible = false
