@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_mc20k"]
 [ext_resource type="PackedScene" uid="uid://b8codlv3vftbe" path="res://Finish.tscn" id="3_dwyiq"]
 [ext_resource type="PackedScene" uid="uid://dhgh72ardb0nd" path="res://Main.tscn" id="4_dn5ey"]
+[ext_resource type="PackedScene" uid="uid://qa44sn36ptrc" path="res://Player2.tscn" id="5_dn5ey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
 texture = ExtResource("1_mc20k")
@@ -154,4 +155,7 @@ position = Vector2(-105, -13)
 [node name="Finish" parent="." unique_id=1582781688 instance=ExtResource("3_dwyiq")]
 position = Vector2(768, -64)
 
-[node name="Main" parent="." unique_id=1492732327 instance=ExtResource("4_dn5ey")]
+[node name="Var" parent="." unique_id=1492732327 instance=ExtResource("4_dn5ey")]
+
+[node name="Player2" parent="." unique_id=862307774 instance=ExtResource("5_dn5ey")]
+position = Vector2(-138, -13)

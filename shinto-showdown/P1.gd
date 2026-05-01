@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var finish
 var SPEED = 200.0
 const ADDSPEED = 20.0
 const JUMP_VELOCITY = -400.0
@@ -68,3 +67,6 @@ func _physics_process(delta: float) -> void:
 	if position.y > 300:
 		position = Vector2(0, 0)
 	
+	if get_node("../../Var").finish == true:
+		print("Test")
+		get_node("../../Var").finish = false

@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumps = 0
 	# Handle jump.
-	if Input.is_action_just_pressed("jumpP2") and jumps < 2:
+	if Input.is_action_just_pressed("JumpP2") and jumps < 2:
 		jumps += 1
 		velocity.y = JUMP_VELOCITY
 
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-	var direction := Input.get_axis("leftP2", "rightP2")
+	var direction := Input.get_axis("LeftP2", "RightP2")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		player_sprite.flip_h = true
 		
-	if Input.is_action_pressed("dashP2"):
+	if Input.is_action_pressed("DashP2"):
 		if not is_on_floor():
 			if rolltime < 0.8:
 				velocity.x = direction * ROLL_BOOST
@@ -52,13 +52,13 @@ func _physics_process(delta: float) -> void:
 	else: 
 		rolltime = 0
 		
-	if Input.is_action_pressed("dashP2"):
+	if Input.is_action_pressed("DashP2"):
 		if not is_on_floor():
 			player_sprite.animation = "Dash"
-	elif Input.is_action_pressed("jumpP2"):
+	elif Input.is_action_pressed("JumpP2"):
 		player_sprite.animation = "Jump"
 	
-	elif Input.is_action_pressed("rightP2") or Input.is_action_pressed("leftP2"):
+	elif Input.is_action_pressed("RightP2") or Input.is_action_pressed("LeftP2"):
 		player_sprite.animation = "Run"
 		
 	else:

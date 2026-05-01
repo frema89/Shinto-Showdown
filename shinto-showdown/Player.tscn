@@ -79,10 +79,6 @@ region = Rect2(336, 96, 48, 32)
 atlas = ExtResource("1_xhfnw")
 region = Rect2(384, 96, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi0c6"]
-atlas = ExtResource("1_xhfnw")
-region = Rect2(0, 96, 48, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhfnw"]
 atlas = ExtResource("1_xhfnw")
 region = Rect2(0, 64, 48, 32)
@@ -187,9 +183,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rv870")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wi0c6")
 }],
 "loop": false,
 "name": &"Jump",
@@ -240,7 +233,7 @@ texture_filter = 1
 position = Vector2(7, -7)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_hqns4")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=278457772]

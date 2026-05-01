@@ -46,14 +46,6 @@ region = Rect2(96, 0, 48, 32)
 atlas = ExtResource("2_eyttc")
 region = Rect2(144, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_snpve"]
-atlas = ExtResource("2_eyttc")
-region = Rect2(0, 96, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4axb"]
-atlas = ExtResource("2_eyttc")
-region = Rect2(48, 96, 48, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_at8cj"]
 atlas = ExtResource("2_eyttc")
 region = Rect2(96, 96, 48, 32)
@@ -158,12 +150,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_snpve")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4axb")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_at8cj")
 }, {
 "duration": 1.0,
@@ -218,7 +204,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=862307774]
+[node name="Player2" type="Node2D" unique_id=862307774]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1554889734]
 script = ExtResource("1_mjxxk")
@@ -233,5 +219,5 @@ texture_filter = 1
 position = Vector2(7, -7)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_e7d53")
-animation = &"Idle"
-autoplay = "Idle"
+animation = &"Run"
+autoplay = "Run"
