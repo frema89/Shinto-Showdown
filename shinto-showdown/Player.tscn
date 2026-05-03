@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://6d8rl68ciy7u" path="res://P1.gd" id="1_kne1u"]
 [ext_resource type="Texture2D" uid="uid://ddon76t6asj00" path="res://Assets for Y10 game/Samurai.png" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://dbcrr4drstdmq" path="res://Assets for Y10 game/Files/Sky.png" id="2_kpjcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
-size = Vector2(8, 23)
+size = Vector2(10, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sg6sq"]
 atlas = ExtResource("1_xhfnw")
@@ -218,30 +217,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player1" type="Node2D" unique_id=1297317234]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=994868188]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=994868188]
+z_index = 5
 script = ExtResource("1_kne1u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1031121288]
-visible = false
-position = Vector2(0, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1031121288]
+position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_xhfnw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1914726708]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914726708]
 texture_filter = 1
 position = Vector2(7, -7)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=278457772]
-position = Vector2(7, -3)
-zoom = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=401768735]
-z_index = -1000
-position = Vector2(-4.99998, 2.00001)
-scale = Vector2(2.2585, 2.67778)
-texture = ExtResource("2_kpjcp")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6v802cemufog" path="res://Assets for Y10 game/Samurai P2.png" id="2_eyttc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
-size = Vector2(8, 23)
+size = Vector2(9, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qrfi"]
 atlas = ExtResource("2_eyttc")
@@ -204,20 +204,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player2" type="Node2D" unique_id=862307774]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1554889734]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1554889734]
 script = ExtResource("1_mjxxk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1136968532]
-visible = false
-position = Vector2(0, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136968532]
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_g3ar4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1609302829]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1609302829]
 texture_filter = 1
 position = Vector2(7, -7)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_e7d53")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Run"

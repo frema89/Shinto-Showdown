@@ -5,6 +5,7 @@ const ADDSPEED = 20.0
 const JUMP_VELOCITY = -400.0
 const ROLL_BOOST = 300.0
 
+
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var rolltime = 1
@@ -65,8 +66,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
  
 	if position.y > 300:
-		position = Vector2(0, 0)
+		position = Vector2(-50, -20)
 	
-	if get_node("../../Var").finish == true:
+	if get_node("../Var").finish == true:
 		print("Test")
-		get_node("../../Var").finish = false
+		get_node("../Var").finish = false
