@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6v802cemufog" path="res://Assets for Y10 game/Samurai P2.png" id="2_eyttc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
-size = Vector2(9, 30)
+size = Vector2(12, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qrfi"]
 atlas = ExtResource("2_eyttc")
@@ -74,10 +74,6 @@ region = Rect2(336, 96, 48, 32)
 atlas = ExtResource("2_eyttc")
 region = Rect2(384, 96, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ch355"]
-atlas = ExtResource("2_eyttc")
-region = Rect2(0, 64, 48, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gudeb"]
 atlas = ExtResource("2_eyttc")
 region = Rect2(48, 64, 48, 32)
@@ -101,6 +97,10 @@ region = Rect2(240, 64, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbx7s"]
 atlas = ExtResource("2_eyttc")
 region = Rect2(288, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch355"]
+atlas = ExtResource("2_eyttc")
+region = Rect2(0, 64, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_feu51"]
 atlas = ExtResource("2_eyttc")
@@ -176,9 +176,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ch355")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_gudeb")
 }, {
 "duration": 1.0,
@@ -197,6 +194,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_tbx7s")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ch355")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_feu51")
 }],
 "loop": true,
@@ -208,7 +208,7 @@ animations = [{
 script = ExtResource("1_mjxxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136968532]
-position = Vector2(0.5, -2)
+position = Vector2(2, -2)
 shape = SubResource("RectangleShape2D_g3ar4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1609302829]
@@ -216,5 +216,7 @@ texture_filter = 1
 position = Vector2(7, -7)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_e7d53")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Run"
+frame = 4
+frame_progress = 0.98191255

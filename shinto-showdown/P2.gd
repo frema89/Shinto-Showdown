@@ -66,5 +66,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
  
 	if position.y > 300:
-		position = Vector2(-50, -20)
+		if position.x > 1350:
+			position = Vector2(1150, -20)
+		elif position.x > 700:
+			position = Vector2(600, -175)
+		elif position.x < 2000:
+			position = Vector2(-50, -20)
+		else:
+			position = Vector2(-50, -20)
 	
