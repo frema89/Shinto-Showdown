@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		
 	elif direction < 0:
 		player_sprite.flip_h = true
-		
+	
 	if Input.is_action_pressed("dashP1"):
 		if not is_on_floor():
 			if rolltime < 0.8:
@@ -50,10 +50,19 @@ func _physics_process(delta: float) -> void:
 			
 	else: 
 		rolltime = 0
+	if Input.is_action_just_pressed("attackP1"):
+		get_node("Hurtbox").disabled = false
+		
+	else:
+		get_node("Hurtbox").disabled = true
 		
 	if Input.is_action_pressed("dashP1"):
 		if not is_on_floor():
 			player_sprite.animation = "Dash"
+	
+	elif Input.is_action_pressed("attackP1"):
+		player_sprite.animation = "Attack"
+	
 	elif Input.is_action_pressed("jumpP1"):
 		player_sprite.animation = "Jump"
 	
@@ -63,6 +72,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_sprite.animation = "Idle"
 	move_and_slide()
+	
 
 	if position.y > 300:
 		if position.x > 1350:
