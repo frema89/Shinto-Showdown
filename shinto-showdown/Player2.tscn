@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://chr0o5ol6q40p" path="res://hitboxP2.gd" id="2_g3ar4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyttc"]
-size = Vector2(25, 20)
+size = Vector2(42, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
 size = Vector2(11.5625, 28)
@@ -252,7 +252,7 @@ animations = [{
 script = ExtResource("1_mjxxk")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=284512815]
-position = Vector2(18.5, 0)
+position = Vector2(15, 2.5)
 shape = SubResource("RectangleShape2D_eyttc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136968532]

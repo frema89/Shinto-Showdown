@@ -41,28 +41,27 @@ func _physics_process(delta: float) -> void:
 		player_sprite.flip_h = true
 	
 	if Input.is_action_pressed("dashP1"):
-		if not is_on_floor():
-			if rolltime < 0.8:
+			if rolltime < 0.6:
 				velocity.x = direction * ROLL_BOOST
 				rolltime += delta
-			if rolltime > 0.8:
-				rolltime = 0.8
+			if rolltime > 0.6:
+				rolltime = 0.6
 			
 	else: 
 		rolltime = 0
-	if Input.is_action_just_pressed("attackP1"):
+	
+	if Input.is_action_pressed("attackP1"):
 		get_node("Hurtbox").disabled = false
 		
 	else:
 		get_node("Hurtbox").disabled = true
 		
 	if Input.is_action_pressed("dashP1"):
-		if not is_on_floor():
-			player_sprite.animation = "Dash"
-	
-	elif Input.is_action_pressed("attackP1"):
-		player_sprite.animation = "Attack"
-	
+		player_sprite.animation = "Dash"
+
+	if Input.is_action_pressed("attackP1"):
+			player_sprite.animation = "attack"
+
 	elif Input.is_action_pressed("jumpP1"):
 		player_sprite.animation = "Jump"
 	
@@ -71,8 +70,10 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		player_sprite.animation = "Idle"
-	move_and_slide()
-	
+
+	if get_node("../Var").P1hit == true:
+		if get_node("../Var").P2direction:
+			velocity.x = get_node("../Var").P2direction * SPEED
 
 	if position.y > 300:
 		if position.x > 1350:
@@ -87,3 +88,5 @@ func _physics_process(delta: float) -> void:
 	if get_node("../Var").finish == true:
 		print("Test")
 		get_node("../Var").finish = false
+	move_and_slide()
+	

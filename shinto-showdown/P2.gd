@@ -10,7 +10,6 @@ const ROLL_BOOST = 300.0
 
 var rolltime = 1
 var jumps = 0
-var coin_count = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -42,26 +41,24 @@ func _physics_process(delta: float) -> void:
 		player_sprite.flip_h = true
 		
 	if Input.is_action_pressed("DashP2"):
-		if not is_on_floor():
-			if rolltime < 0.8:
-				velocity.x = direction * ROLL_BOOST
-				rolltime += delta
-			if rolltime > 0.8:
-				rolltime = 0.8
+		if rolltime < 0.6:
+			velocity.x = direction * ROLL_BOOST
+			rolltime += delta
+		if rolltime > 0.6:
+			rolltime = 0.6
 	else: 
 		rolltime = 0
 		
-	if Input.is_action_just_pressed("attackP1"):
+	if Input.is_action_pressed("AttackP2"):
 		get_node("Hurtbox").disabled = false
 		
 	else:
 		get_node("Hurtbox").disabled = true
 		
 	if Input.is_action_pressed("DashP2"):
-		if not is_on_floor():
-			player_sprite.animation = "Dash"
+		player_sprite.animation = "Dash"
 		
-	elif Input.is_action_pressed("attackP1"):
+	elif Input.is_action_pressed("AttackP2"):
 		player_sprite.animation = "Attack"
 	
 	elif Input.is_action_pressed("JumpP2"):
@@ -73,8 +70,11 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		player_sprite.animation = "Idle"
-	move_and_slide()
-
+	
+	if get_node("../Var").P2hit == true:
+		if get_node("../Var").P1direction:
+			velocity.x = get_node("../Var").P1direction * SPEED
+	
 	if position.y > 300:
 		if position.x > 1350:
 			position = Vector2(1150, -20)
@@ -85,3 +85,4 @@ func _physics_process(delta: float) -> void:
 		else:
 			position = Vector2(-50, -20)
 	
+	move_and_slide()
