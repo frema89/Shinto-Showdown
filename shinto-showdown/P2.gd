@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("LeftP2", "RightP2")
 	if direction:
 		velocity.x = direction * SPEED
+		get_node("CollisionShape2D").Scale = Vector2(direction, 1)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -49,11 +50,6 @@ func _physics_process(delta: float) -> void:
 	else: 
 		rolltime = 0
 		
-	if Input.is_action_pressed("AttackP2"):
-		get_node("Hurtbox").disabled = false
-		
-	else:
-		get_node("Hurtbox").disabled = true
 		
 	if Input.is_action_pressed("DashP2"):
 		player_sprite.animation = "Dash"
@@ -86,3 +82,8 @@ func _physics_process(delta: float) -> void:
 			position = Vector2(-50, -20)
 	
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_node("../Var").P2hit = true
+	print("done")

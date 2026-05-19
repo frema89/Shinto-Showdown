@@ -2,10 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqbmnic5movhq" path="res://P2.gd" id="1_mjxxk"]
 [ext_resource type="Texture2D" uid="uid://c6v802cemufog" path="res://Assets for Y10 game/Samurai P2.png" id="2_eyttc"]
-[ext_resource type="Script" uid="uid://chr0o5ol6q40p" path="res://hitboxP2.gd" id="2_g3ar4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyttc"]
-size = Vector2(42, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
 size = Vector2(11.5625, 28)
@@ -248,20 +244,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_mjxxk"]
+script/source = "extends Area2D"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjxxk"]
+size = Vector2(22, 17.5)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1554889734]
 script = ExtResource("1_mjxxk")
 
-[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=284512815]
-position = Vector2(15, 2.5)
-shape = SubResource("RectangleShape2D_eyttc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136968532]
-shape = SubResource("RectangleShape2D_g3ar4")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1744129311]
-script = ExtResource("2_g3ar4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=833506876]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833506876]
 shape = SubResource("RectangleShape2D_g3ar4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1609302829]
@@ -274,4 +266,12 @@ autoplay = "Run"
 frame = 3
 frame_progress = 0.9005029
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[node name="Area2D" type="Area2D" parent="." unique_id=1326293170]
+script = SubResource("GDScript_mjxxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2034715592]
+physics_interpolation_mode = 2
+position = Vector2(17, 0)
+shape = SubResource("RectangleShape2D_mjxxk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
