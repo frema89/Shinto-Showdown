@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("LeftP2", "RightP2")
 	if direction:
 		velocity.x = direction * SPEED
-		get_node("CollisionShape2D").Scale = Vector2(direction, 1)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -49,7 +48,15 @@ func _physics_process(delta: float) -> void:
 			rolltime = 0.6
 	else: 
 		rolltime = 0
+			
+	if Input.is_action_pressed("LeftP2"):
+		$CollisionShape2D.position.x = 15
+		$Area2D/CollisionShape2D.position.x = -6
 		
+		
+	if Input.is_action_pressed("RightP2"):
+		$CollisionShape2D.position.x = 0
+		$Area2D/CollisionShape2D.position.x = 17.5
 		
 	if Input.is_action_pressed("DashP2"):
 		player_sprite.animation = "Dash"

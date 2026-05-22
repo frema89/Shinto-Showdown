@@ -51,11 +51,14 @@ func _physics_process(delta: float) -> void:
 	else: 
 		rolltime = 0
 	
-	#if Input.is_action_pressed("attackP1"):
-	#	get_node("Hurtbox").disabled = false
+	if Input.is_action_pressed("leftP1"):
+		$CollisionShape2D.position.x = 15
+		$Area2D/CollisionShape2D.position.x = -6
 		
-	#else:
-	#	get_node("Area2D/Hurtbox").disabled = true
+		
+	if Input.is_action_pressed("rightP1"):
+		$CollisionShape2D.position.x = 0
+		$Area2D/CollisionShape2D.position.x = 17.5
 		
 	if Input.is_action_pressed("dashP1"):
 		player_sprite.animation = "Dash"

@@ -254,7 +254,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
@@ -274,6 +274,7 @@ scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 animation = &"attack"
 autoplay = "Idle"
+frame = 3
 
 [node name="Area2D" type="Area2D" parent="." unique_id=65771923]
 
