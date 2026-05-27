@@ -75,9 +75,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_sprite.animation = "Idle"
 
-	if get_node("../Var").P1hit == true:
-		if get_node("../Var").P2direction:
-			velocity.x = get_node("../Var").P2direction * SPEED
+#	if get_node("../Var").P1hit == true:
+#		if get_node("../Var").P2direction:
+#			velocity.x = get_node("../Var").P2direction * SPEED
 
 	if position.y > 300:
 		if position.x > 1350:
@@ -95,7 +95,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-		get_node("../Var").P1hit = true
 		print("done")

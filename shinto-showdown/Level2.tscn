@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_6faey"]
 [ext_resource type="PackedScene" uid="uid://b8codlv3vftbe" path="res://Finish.tscn" id="3_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://dhgh72ardb0nd" path="res://Main.tscn" id="4_6x3wt"]
-[ext_resource type="PackedScene" uid="uid://qa44sn36ptrc" path="res://Player2.tscn" id="5_3453u"]
 [ext_resource type="Script" uid="uid://c1yddccp1m0en" path="res://camera_2d.gd" id="6_46pvi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
@@ -160,9 +159,6 @@ position = Vector2(-105, -12)
 position = Vector2(2195, -64)
 
 [node name="Var" parent="." unique_id=1492732327 instance=ExtResource("4_6x3wt")]
-
-[node name="Player2" parent="." unique_id=862307774 instance=ExtResource("5_3453u")]
-position = Vector2(-138, -13)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=505944282]
 zoom = Vector2(1.8, 1.8)
