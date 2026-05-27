@@ -89,9 +89,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			position = Vector2(-50, -20)
 	
-	if get_node("../Var").finish == true:
+	if Globals.finish == true:
 		print("Test")
-		get_node("../Var").finish = false
+		Globals.finish = false
 	move_and_slide()
 	
 

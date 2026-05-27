@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://capjthqcnrmgv" path="res://level_1.gd" id="1_mlbie"]
 [ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_mc20k"]
 [ext_resource type="PackedScene" uid="uid://b8codlv3vftbe" path="res://Finish.tscn" id="3_dwyiq"]
-[ext_resource type="PackedScene" uid="uid://dhgh72ardb0nd" path="res://Main.tscn" id="4_dn5ey"]
-[ext_resource type="Script" uid="uid://c1yddccp1m0en" path="res://camera_2d.gd" id="6_lmyl5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
 texture = ExtResource("1_mc20k")
@@ -155,13 +153,10 @@ tile_set = SubResource("TileSet_dn5ey")
 [node name="Player1" parent="." unique_id=1946280259 instance=ExtResource("2_mc20k")]
 position = Vector2(-105, -12)
 
+[node name="P1 Camera" type="Camera2D" parent="Player1" unique_id=1907082677]
+zoom = Vector2(1.8, 1.8)
+
 [node name="Finish" parent="." unique_id=1582781688 instance=ExtResource("3_dwyiq")]
 position = Vector2(2195, -64)
-
-[node name="Var" parent="." unique_id=1492732327 instance=ExtResource("4_dn5ey")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=505944282]
-zoom = Vector2(1.8, 1.8)
-script = ExtResource("6_lmyl5")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqbmnic5movhq" path="res://P2.gd" id="1_mjxxk"]
 [ext_resource type="Texture2D" uid="uid://c6v802cemufog" path="res://Assets for Y10 game/Samurai P2.png" id="2_eyttc"]
+[ext_resource type="Script" uid="uid://c1yddccp1m0en" path="res://camera_2d.gd" id="3_eyttc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
 size = Vector2(11.5625, 28)
@@ -273,5 +274,9 @@ script = SubResource("GDScript_mjxxk")
 physics_interpolation_mode = 2
 position = Vector2(17, 0)
 shape = SubResource("RectangleShape2D_mjxxk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2055431335]
+zoom = Vector2(1.8, 1.8)
+script = ExtResource("3_eyttc")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
