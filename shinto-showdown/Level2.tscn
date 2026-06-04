@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://supjfxdec54i" path="res://Assets for Y10 game/sheet.png" id="1_wwdpc"]
 [ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_6faey"]
 [ext_resource type="PackedScene" uid="uid://b8codlv3vftbe" path="res://Finish.tscn" id="3_nc7oo"]
-[ext_resource type="PackedScene" uid="uid://dhgh72ardb0nd" path="res://Main.tscn" id="4_6x3wt"]
-[ext_resource type="Script" uid="uid://c1yddccp1m0en" path="res://camera_2d.gd" id="6_46pvi"]
 [ext_resource type="PackedScene" uid="uid://bv5pxri6s4mur" path="res://Main_menu.tscn" id="7_6faey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
@@ -156,14 +154,12 @@ tile_set = SubResource("TileSet_dn5ey")
 [node name="Player1" parent="." unique_id=1946280259 instance=ExtResource("2_6faey")]
 position = Vector2(-105, -12)
 
+[node name="Camera2D" type="Camera2D" parent="Player1" unique_id=505944282]
+position = Vector2(105, 12)
+zoom = Vector2(1.8, 1.8)
+
 [node name="Finish" parent="." unique_id=1582781688 instance=ExtResource("3_nc7oo")]
 position = Vector2(2195, -64)
-
-[node name="Var" parent="." unique_id=1492732327 instance=ExtResource("4_6x3wt")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=505944282]
-zoom = Vector2(1.8, 1.8)
-script = ExtResource("6_46pvi")
 
 [node name="Control" parent="." unique_id=1837071397 instance=ExtResource("7_6faey")]
 visible = false

@@ -1,6 +1,6 @@
 extends Camera2D
-@onready var p1 = get_node("../Player1")
-@onready var p2 = get_node("../Player2")
+@onready var p1 = get_node("../../Player1")
+@onready var p2 = get_node("..")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
