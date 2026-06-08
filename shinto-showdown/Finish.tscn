@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://b8codlv3vftbe"]
 
 [ext_resource type="Texture2D" uid="uid://fw8htplnkpnn" path="res://Assets for Y10 game/Files/Shrine_Single.png" id="1_6h8fl"]
-[ext_resource type="Script" uid="uid://77s1qi5byxdi" path="res://Finish.gd" id="2_gf6tg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyy2v"]
-size = Vector2(110, 183)
 
 [node name="Finish" type="Node2D" unique_id=1582781688]
 
@@ -15,12 +11,3 @@ scale = Vector2(1.5285715, 1.468504)
 texture = ExtResource("1_6h8fl")
 region_enabled = true
 region_rect = Rect2(0, 52.5, 140.5, 127.5)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1266614982]
-script = ExtResource("2_gf6tg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2112371527]
-position = Vector2(22, -27.5)
-shape = SubResource("RectangleShape2D_xyy2v")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

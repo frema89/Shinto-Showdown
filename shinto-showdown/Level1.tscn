@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://capjthqcnrmgv" path="res://level_1.gd" id="1_mlbie"]
 [ext_resource type="PackedScene" uid="uid://bpnlde0nlhiqk" path="res://Player.tscn" id="2_mc20k"]
 [ext_resource type="PackedScene" uid="uid://b8codlv3vftbe" path="res://Finish.tscn" id="3_dwyiq"]
+[ext_resource type="Script" uid="uid://bhxkjwr8idsq1" path="res://time.gd" id="5_dn5ey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyiq"]
 texture = ExtResource("1_mc20k")
@@ -139,6 +140,9 @@ texture = ExtResource("1_mc20k")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dwyiq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmyl5"]
+size = Vector2(29, 109)
+
 [node name="Node2D" type="Node2D" unique_id=945573025]
 position = Vector2(18, 0)
 script = ExtResource("1_mlbie")
@@ -159,4 +163,20 @@ zoom = Vector2(1.8, 1.8)
 [node name="Finish" parent="." unique_id=1582781688 instance=ExtResource("3_dwyiq")]
 position = Vector2(2195, -64)
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=771121056]
+
+[node name="Label" type="Label" parent="." unique_id=240919837]
+offset_left = 2151.0
+offset_top = -104.0
+offset_right = 2191.0
+offset_bottom = -81.0
+script = ExtResource("5_dn5ey")
+
+[node name="Area2D" type="Area2D" parent="Label" unique_id=688778612]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/Area2D" unique_id=1119396623]
+position = Vector2(3, 50)
+shape = SubResource("RectangleShape2D_lmyl5")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="Label/Area2D" to="Label" method="_on_area_2d_body_entered"]
