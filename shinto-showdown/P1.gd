@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		player_sprite.animation = "Dash"
 
 	if Input.is_action_pressed("attackP1"):
-			player_sprite.animation = "attack"
+		player_sprite.animation = "attack"
 
 	elif Input.is_action_pressed("jumpP1"):
 		player_sprite.animation = "Jump"
@@ -95,5 +95,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 		print("done")

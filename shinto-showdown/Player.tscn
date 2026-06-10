@@ -265,6 +265,7 @@ z_index = 5
 script = ExtResource("1_kne1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711424843]
+visible = false
 shape = SubResource("RectangleShape2D_xhfnw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914726708]
@@ -272,14 +273,14 @@ texture_filter = 1
 position = Vector2(7, -6)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_hqns4")
-animation = &"attack"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 3
 
 [node name="Area2D" type="Area2D" parent="." unique_id=65771923]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1988086917]
 physics_interpolation_mode = 2
+visible = false
 position = Vector2(17, 0)
 shape = SubResource("RectangleShape2D_kpjcp")
 

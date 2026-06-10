@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqbmnic5movhq" path="res://P2.gd" id="1_mjxxk"]
 [ext_resource type="Texture2D" uid="uid://c6v802cemufog" path="res://Assets for Y10 game/Samurai P2.png" id="2_eyttc"]
-[ext_resource type="Script" uid="uid://c1yddccp1m0en" path="res://camera_2d.gd" id="3_eyttc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ar4"]
 size = Vector2(11.5625, 28)
@@ -251,10 +250,11 @@ script/source = "extends Area2D"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjxxk"]
 size = Vector2(22, 17.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1554889734]
+[node name="Player2" type="CharacterBody2D" unique_id=1554889734]
 script = ExtResource("1_mjxxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833506876]
+visible = false
 shape = SubResource("RectangleShape2D_g3ar4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1609302829]
@@ -262,21 +262,16 @@ texture_filter = 1
 position = Vector2(7, -6)
 scale = Vector2(1, 1.25)
 sprite_frames = SubResource("SpriteFrames_e7d53")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Run"
-frame = 3
-frame_progress = 0.9005029
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1326293170]
+visible = false
 script = SubResource("GDScript_mjxxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2034715592]
 physics_interpolation_mode = 2
 position = Vector2(17, 0)
 shape = SubResource("RectangleShape2D_mjxxk")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2055431335]
-zoom = Vector2(1.8, 1.8)
-script = ExtResource("3_eyttc")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

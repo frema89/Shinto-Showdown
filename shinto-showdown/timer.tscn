@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxeb32d24v7bm"]
+
+[ext_resource type="Script" uid="uid://inaqbvf83waj" path="res://label.gd" id="1_qdhxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ye2uk"]
+size = Vector2(67, 377)
+
+[node name="Control" type="Control" unique_id=255942797]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1038831600]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_qdhxh")
+
+[node name="Area2D" type="Area2D" parent="Label" unique_id=1400320237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/Area2D" unique_id=557263583]
+position = Vector2(23.5, 178.5)
+shape = SubResource("RectangleShape2D_ye2uk")
+
+[connection signal="body_entered" from="Label/Area2D" to="Label" method="_on_area_2d_body_entered"]
